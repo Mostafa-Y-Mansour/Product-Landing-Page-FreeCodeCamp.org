@@ -1,0 +1,343 @@
+/* general styling */
+
+:root {
+  --font-family: "Lato", sans-serif;
+  --font-size: 16px;
+  --color: #222;
+  --icon-color: #ff8c00;
+  --btn-color: #f1c40f;
+  --border-color: black;
+  --main-transition: 0.3s;
+  --main-padding: 75px;
+}
+
+@media screen and (max-width: 669px) {
+  :root {
+    --main-padding: 100px;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* body styling */
+
+body {
+  font-family: var(--font-family, "Lato", sans-serif);
+  font-size: var(--font-size, 16px);
+}
+
+/* header style */
+
+#header {
+  background-color: white;
+  padding: 15px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+}
+
+/* logo style */
+
+#header > #header-img {
+  width: 300px;
+}
+
+/* nav style */
+
+#header > #nav-bar > .nav-list {
+  display: flex;
+  list-style-type: none;
+  align-items: center;
+}
+
+#header > #nav-bar > .nav-list > li > .nav-link {
+  margin-right: 30px;
+  text-decoration: none;
+  color: var(--color);
+  font-size: 1rem;
+  font-weight: 500;
+  position: relative;
+}
+
+#header > #nav-bar > .nav-list > li > .nav-link:hover {
+  color: var(--icon-color);
+}
+
+#header > #nav-bar > .nav-list > li > .nav-link::before {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background-color: var(--icon-color, #ff8c00);
+  position: absolute;
+  bottom: -7px;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  transition: var(--main-transition, 0.3s);
+  -webkit-transition: var(--main-transition, 0.3s);
+  -moz-transition: var(--main-transition, 0.3s);
+  -ms-transition: var(--main-transition, 0.3s);
+  -o-transition: var(--main-transition, 0.3s);
+}
+
+#header > #nav-bar > .nav-list > li > .nav-link:hover::before {
+  width: 100%;
+}
+
+@media screen and (max-width: 669px) {
+  #header {
+    flex-direction: column;
+  }
+
+  #header > #nav-bar {
+    width: 100%;
+  }
+
+  #header > #nav-bar > .nav-list {
+    margin: 10px;
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+/* container style */
+
+.container {
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* hero and form section style */
+
+#hero {
+  width: 100%;
+  height: 250px;
+  padding-top: var(--main-padding);
+  text-align: center;
+}
+
+#hero > h1 {
+  margin-bottom: 20px;
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 669px) {
+  #hero > h1 {
+    font-size: 1.5rem;
+  }
+}
+
+#hero > Form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Email and Button section */
+
+#hero > Form > #email {
+  padding: 10px;
+  width: 300px;
+  background-color: #ddd;
+  border: 1px solid #ddd;
+  outline: none;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+#hero > Form > #submit {
+  padding: 10px;
+  background-color: var(--btn-color, #f1c40f);
+  margin: 15px;
+  outline: 0;
+  border: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+
+#hero > Form > #submit:hover {
+  background-color: var(--icon-color, #ff8c00);
+}
+
+/* features style */
+
+#features {
+  padding-top: var(--main-padding, 75px);
+}
+
+#features > .feature {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#features > .feature:nth-child(2) {
+  margin: 40px 0;
+}
+
+#features > .feature > .icon {
+  margin: auto;
+}
+
+#features > .feature > .icon > i {
+  font-size: 3rem;
+  color: var(--icon-color);
+}
+
+#features > .feature > .text {
+  width: 80%;
+}
+
+#features > .feature > .text > h2 {
+  margin: 10px 0;
+}
+
+/* features in smaller screen style */
+
+@media screen and (max-width: 669px) {
+  #features > .feature {
+    flex-direction: column;
+  }
+
+  #features > .feature > .text,
+  #features > .feature > .text > h2 {
+    text-align: center;
+  }
+}
+
+/* video style */
+
+#video-iframe {
+  margin: auto;
+  padding-top: var(--main-padding, 75px);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* price card style */
+
+#price {
+  padding-top: var(--main-padding, 75px);
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#price > #card {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  text-align: center;
+  border: 1px solid var(--border-color, black);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+#price > #card > .level {
+  padding: 15px 50px;
+  background-color: #ddd;
+  border-radius: 5px 5px 0 0;
+  -webkit-border-radius: 5px 5px 0 0;
+  -moz-border-radius: 5px 5px 0 0;
+  -ms-border-radius: 5px 5px 0 0;
+  -o-border-radius: 5px 5px 0 0;
+}
+
+#price > #card > h2 {
+  margin: 15px;
+}
+
+#price > #card > ol > li {
+  list-style-type: none;
+  margin: 5px;
+}
+
+#price > #card > .btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: var(--btn-color, #f1c40f);
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+
+#price > #card > .btn:hover {
+  background-color: var(--icon-color);
+}
+
+@media screen and (max-width: 800px) {
+  #price {
+    margin: auto;
+    width: 275px;
+    flex-direction: column;
+  }
+}
+
+/* footer style */
+
+#footer {
+  margin-top: var(--main-padding, 75px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 20px;
+}
+
+#footer > ul {
+  display: flex;
+  list-style-type: none;
+}
+
+#footer > ul > li {
+  margin: 10px;
+}
+
+#footer > ul > li > a {
+  text-decoration: none;
+  color: var(--color);
+}
+
+#footer > ul > li > a:hover {
+  color: var(--icon-color);
+}
